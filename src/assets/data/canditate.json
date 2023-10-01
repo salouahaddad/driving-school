@@ -1,11 +1,11 @@
 [
     {
         "num_conditate":1,
-        "nom_conditate":"haddad",
-        "prenom_conditate":"saloua",
+        "nom_conditate":"Haddad",
+        "prenom_conditate":"Saloua",
         "email":"salouahaddad@email.com",
         "password":"password",
-        "num_exam":1
+        "num_exam":"1"
     },
     {
         "num_conditate":2,
@@ -13,7 +13,7 @@
         "prenom_conditate":"Saed",
         "email":"saed@email.com",
         "password":"password",
-        "num_exam":0
+        "num_exam":"0"
     },
     {
         "num_conditate":"1",
