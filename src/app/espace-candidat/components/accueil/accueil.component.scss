@@ -1,0 +1,29 @@
+
+$primary: var(--bs-primary);
+$info:var(--bs-info);
+$danger:var(--bs-danger);
+.text-color-danger{
+  color: $danger;
+}
+  .content{
+    overflow: auto;
+    max-height: 40rem;
+    height: 33rem;
+  }
+  .cell{
+    margin: 0.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+
+.primary-bcg{
+  background-color: $primary;
+  color: white;
+}
+.text-color-primary{
+    color: $primary;
+}
+.text-color-info{
+    color: $info;
+}

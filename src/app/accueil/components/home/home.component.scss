@@ -1,0 +1,9 @@
+$primary: var(--bs-primary);
+$info:var(-bs-info);
+
+.text-color-primary{
+    color: $primary;
+}
+.text-color-info{
+    color: $info;
+}

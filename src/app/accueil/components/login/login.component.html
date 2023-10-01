@@ -1,0 +1,45 @@
+<div class="card text-bg-dark">
+    <img src="../../../../assets/img/prmb.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay ">
+        <div class="h-100 d-inline-block" style="width: 100%;">
+
+            <div class="container mt-5 " >
+                <div class="card align-middle " >
+                    <div class="card-header">
+                        <h1>Login</h1>
+                    </div>
+                    <div class="card-body" [formGroup]="loginInfoForm">
+                        <div class="mb-3 row">
+                            <mat-label class="col-sm-2 col-form-label" for="exampleFormControlInput1" >Email</mat-label>
+                            <div class="col-sm-10">
+                                <input type="email" matInput formControlName="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <mat-error *ngIf="loginInfoForm.get('email')?.hasError('required') && loginInfoForm.get('email')?.touched">Ce champ est requis</mat-error>
+                                <mat-error *ngIf="loginInfoForm.get('email')?.hasError('email') && loginInfoForm.get('email')?.touched" >Format d'email invalide</mat-error>
+                            </div>
+                            
+                         </div>
+                        <div class="mb-3 row">
+                            <mat-label for="inputPassword5" class="col-sm-2 col-form-label" >Password</mat-label>
+                            <div class="col-sm-10"> 
+                                <input type="password" id="inputPassword5" matInput formControlName="password" class="form-control" aria-describedby="passwordHelpBlock">
+                                <mat-error *ngIf="loginInfoForm.get('password')?.hasError('required') &&   loginInfoForm.get('password')?.touched">Ce champ est requis</mat-error>
+                            </div>
+
+                            
+                        </div>
+                        
+                    </div>
+                    <div  class="card-footer text-center">
+                        <div class="mb-3 row">
+                            <mat-error *ngIf="isErrour">Votre Email ou Eassword incorrect</mat-error>
+                             
+                        </div>
+                        <button type="button" (click)="Login()" [disabled]="loginInfoForm.invalid" class="btn btn-primary">Login</button>
+                        </div>
+                </div>
+     </div>
+        </div>
+    </div>
+</div>
+    
+    

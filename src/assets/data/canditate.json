@@ -1,0 +1,34 @@
+[
+    {
+        "num_conditate":1,
+        "nom_conditate":"haddad",
+        "prenom_conditate":"saloua",
+        "email":"salouahaddad@email.com",
+        "password":"password",
+        "num_exam":1
+    },
+    {
+        "num_conditate":2,
+        "nom_conditate":"Gali",
+        "prenom_conditate":"Saed",
+        "email":"saed@email.com",
+        "password":"password",
+        "num_exam":0
+    },
+    {
+        "num_conditate":"1",
+        "nom_conditate":"",
+        "prenom_conditate":"",
+        "email":"",
+        "password":"",
+        "num_exam":""
+    },
+    {
+        "num_conditate":"1",
+        "nom_conditate":"",
+        "prenom_conditate":"",
+        "email":"",
+        "password":"",
+        "num_exam":""
+    }
+]

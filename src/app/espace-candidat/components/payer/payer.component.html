@@ -1,0 +1,53 @@
+
+
+       <div class="payment-container">
+        <h2>Payment Page</h2>
+        <form [formGroup]="paymentForm" (ngSubmit)="makePayment()">
+          <div class="form-group">
+            <label for="card-number">Numéro de carte</label>
+            <input type="text" id="card-number" formControlName="cardNumber">
+            <div *ngIf="paymentForm.get('cardNumber')?.hasError('required') 
+            && paymentForm.get('cardNumber')?.touched" class="error-message">
+            Le numéro de carte est requis.
+            </div>
+            <div *ngIf="paymentForm.get('cardNumber')?.hasError('pattern') 
+            && paymentForm.get('cardNumber')?.touched" class="error-message">
+            Format de numéro de carte invalide.
+            </div>
+
+            <div *ngIf="paymentForm.get('cardNumber')?.hasError('invalidCardNumber')
+             && paymentForm.get('cardNumber')?.touched" class="error-message">
+             Format de numéro de carte invalide ou carte non valide.
+              </div>
+
+          </div>
+          <div class="form-group">
+            <label for="expiry-date">Date d'expiration</label>
+            <input type="text" id="expiry-date" formControlName="expiryDate">
+            <div *ngIf="paymentForm.get('expiryDate')?.hasError('required') 
+            && paymentForm.get('expiryDate')?.touched" class="error-message">
+            La date d'expiration est requise.
+            </div>
+            <div *ngIf="paymentForm.get('expiryDate')?.hasError('pattern') 
+            && paymentForm.get('expiryDate')?.touched" class="error-message">
+            Format de date d'expiration non valide (MM/AA).
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" formControlName="cvv">
+            <div *ngIf="paymentForm.get('cvv')?.hasError('required') 
+            && paymentForm.get('cvv')?.touched" class="error-message">
+            Le CVV est requis.
+            </div>
+            <div *ngIf="paymentForm.get('cvv')?.hasError('pattern') 
+            && paymentForm.get('cvv')?.touched" class="error-message">
+            Format CVV invalide (3 chiffres).
+            </div>
+          </div>
+          <button type="submit" class="button-P" [disabled]="paymentForm.invalid">Effectuer le paiement</button>
+
+          <button type="button" class="btn btn-secondary" (click)="annule()">Annule</button>
+        </form>
+      </div>
+      

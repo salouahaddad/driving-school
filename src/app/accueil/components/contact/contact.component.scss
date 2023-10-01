@@ -1,0 +1,31 @@
+$primary: #46b5d1;
+.dbox{
+	width: 100%;
+	margin-bottom: 25px;
+
+	p{
+		margin-bottom: 0;
+		span{
+			font-weight: 500;
+			color: black;
+		}
+		a{
+			color: $primary;
+		}
+	}
+	.icon{
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: $primary;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		span{
+			font-size: 20px;
+			color: white;
+		}
+	}
+	.text{
+		width: 100%;
+	}
+}

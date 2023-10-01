@@ -1,0 +1,50 @@
+
+<div class="container-fluid">
+
+  
+    
+    <div class="row">
+      
+        <div class="col content "  >
+            <div class="card text-center content">
+                <div class="card-header primary-bcg">
+                    À-propos de moi
+                </div>
+                <div class="card-body">
+                    <div *ngIf="candidate$ | async as candidate" class="container-fluid" >
+                        {{candidate.prenom_conditate}} - {{candidate.nom_conditate}} 
+                    </div>
+                    <div *ngIf="examCanditate$ | async as examCanditate" class="container-fluid card cell" >
+                      <span class="text-color-danger">  Votre examen le  {{examCanditate.date_exam | date: ' d MMMM yyyy'}} </span>
+                      
+                      <button type="button" class="btn btn-outline-danger cell" (click)="modifier()">Modifier</button>
+                    </div>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    <button type="button" class="btn btn-secondary" (click)="deconnecte()">Déconnecte</button>
+                </div>
+              </div>
+            </div>
+        <div class="col-10 card content">
+         <div class="container-fluid"  *ngIf="listeExam$ | async as listeExam" >
+            <div class="card cell" *ngFor="let exam of listeExam">
+                <div class="card-header primary-bcg">
+                    Examen du {{exam.date_exam | date: ' d MMMM yyyy'}}
+                </div>
+                <div class="card-body">
+                  <div class="blockquote mb-0">
+                    <p>Nombre de places : {{exam.number_lmt}}</p>
+                    <p>Nombre de places disponibles : {{exam.number_libr}}
+                        
+                        <button  (click)="reservation(exam)" class="btn btn-link" [disabled]="examCanditate$ | async "  *ngIf=" exam.number_libr>0 ">J'ai réservé</button ></p>
+                    <footer class="blockquote-footer ">Date limite d'inscription le  <cite title="Source Title">{{exam.datefin_inscri | date: 'dd/MM/yyyy' }}</cite></footer>
+                         </div>
+                </div>
+              </div>
+         </div>
+        </div>
+    </div>
+   
+</div>
+
+
